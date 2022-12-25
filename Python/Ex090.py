@@ -10,5 +10,3 @@ else:
 print('-=' * 30)
 for k, v in aluno.items():
     print(f' - {k} é igual a {v}')
-
-
