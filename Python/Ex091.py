@@ -3,13 +3,18 @@ Guarde esses resultados em um dicionário. No final, coloque esse dicionário em
 o vencedor tirou o maior número no dado."""
 from random import randint
 from time import sleep
-for v in range(1, 4):
-    jogo = randint(1, 6)
-jogadores = {'jogador1': jogo, 'jogador2': jogo, 'jogador3': jogo, 'jogador4': jogo}
-print('-=' * 5, '<<< VALORES SORTEADOS >>>', '-=' * 5)
-for k, v in jogadores.items():
-    jogo = randint(1, 6)
-    print(f'O {k} tirou {jogo}')
-    sleep(1)
-print()
-print('-=' * 5, '<<< RANKING DOS JOGADORES >>>', '-=' * 5)
+from operator import itemgetter
+jogo = {'jogador1': randint(1, 6),
+        'jogador2': randint(1, 6),
+        'jogador3': randint(1, 6),
+        'jogador4': randint(1, 6),}
+ranking = list()
+print('Valores sorteados:')
+for k, v in jogo.items():
+    print(f'{k} tirou {v} no dado.')
+    sleep(0.5)
+ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+print('Ranking de jogadores:')
+for i, v in enumerate(ranking):
+    print(f'{i + 1}º lugar: {v[0]} com {v[1]}.')
+    sleep(0.5)
