@@ -14,3 +14,4 @@ if dicionario['ctps'] > 0:
 else:
     for k, v in dicionario.items():
         print(f' - {k} tem o valor de {v}.')
+
