@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <br><br><br>
+    <div id="res">
+        Escreva dois números acima e clique em somar para ver o resultado. <br>
+        Caso queira apagar, clique em limpar.
+    </div>
+    <br>
+    <input type="button" value="Somar" onclick="somar()">
+    <input type="button" value="Limpar" onclick="limpar()">
+
+    <script>
+        function somar(){
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.getElementById('txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `O resultado da soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>!`
+        }
+
+        function limpar (){
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.getElementById('txtn2')
+            var res = document.getElementById('res')
+            tn1.value = ""
+            tn2.value = ""
+            res.innerHTML = "Escreva dois números acima e clique em somar para ver o resultado. <br> Caso queira apagar, clique em limpar."
+            window.alert('Números limpos com sucesso!')
+        }
+
+    </script>
+</body>
+</html>
